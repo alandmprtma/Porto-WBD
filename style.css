@@ -78,19 +78,6 @@
     margin: 0 auto 20px; /* Menambahkan margin di bawah gambar */
     object-fit: cover; /* Memastikan gambar tidak terdistorsi */
   }
-  
-  .bug-report {
-    font-size: 0.9rem;
-    text-decoration: none;
-    color: #fff;
-    background: rgba(0, 0, 0, 0.6);
-    padding: 8px 15px;
-    border-radius: 20px;
-  }
-  
-  .bug-report:hover {
-    background: #333;
-  }
 
 
   .menu-toggle {
