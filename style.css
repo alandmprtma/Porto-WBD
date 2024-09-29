@@ -1,0 +1,572 @@
+/* Reset browser default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* General Styles */
+  body {
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    background: radial-gradient(circle, rgba(9,9,121,1) 0%, rgba(0,0,0,1) 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  /* Home Section */
+  #home {
+    text-align: center;
+    padding: 100px 20px;
+    background-image: url('background-grid.png'); /* Optional grid background */
+    background-size: cover;
+    background-position: center;
+  }
+  
+  #home h2 {
+    font-size: 1rem;
+    color: #b3b3ff;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 10px;
+  }
+  
+  #home h1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+  
+  #home .highlight {
+    color: #7764ff;
+  }
+  
+  #home p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+  }
+  
+  .cta-button {
+    padding: 10px 30px;
+    background-color: #4d4dff;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+  }
+  
+  .cta-button:hover {
+    background-color: #7373ff;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Footer */
+  footer {
+    text-align: right;
+    padding: 20px;
+  }
+
+  .rounded-image {
+    width: 350px; /* Atur lebar sesuai kebutuhan */
+    height: 350px; /* Atur tinggi sesuai kebutuhan */
+    border-radius: 50%; /* Membuat gambar menjadi bulat */
+    display: block; /* Memastikan gambar berada di baris baru */
+    margin: 0 auto 20px; /* Menambahkan margin di bawah gambar */
+    object-fit: cover; /* Memastikan gambar tidak terdistorsi */
+  }
+  
+  .bug-report {
+    font-size: 0.9rem;
+    text-decoration: none;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 8px 15px;
+    border-radius: 20px;
+  }
+  
+  .bug-report:hover {
+    background: #333;
+  }
+
+
+  .menu-toggle {
+    display: none;
+  }
+  /* Hamburger Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 25px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+  position: relative;
+}
+
+.hamburger span {
+  width: 100%;
+  height: 3px;
+  background-color: white;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+/* Hide navbar on smaller screens */
+#nav-links {
+  display: flex;
+  list-style: none;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+      display: flex;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+  }
+
+  #nav-links {
+      display: none;
+      flex-direction: column;
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.9);
+      justify-content: center;
+      align-items: center;
+  }
+
+  #nav-links.active {
+      display: flex;
+  }
+
+  #menu-toggle:checked ~ #nav-links {
+    display: flex;
+  }
+
+  #nav-links li {
+      margin: 20px 0;
+  }
+  
+}
+
+
+  /* Custom navbar styling */
+.custom-nav {
+    display: flex;
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin-top: 15px;
+    z-index: 1000; /* Ensure it's on top of other elements */
+    justify-content: center; /* Adjust the spacing from the top */
+}
+
+.custom-nav ul {
+    display: flex;
+    list-style: none;
+    /* background-color: rgba(255, 255, 255, 0.1); Semi-transparent background */
+    padding: 10px 20px;
+    border-radius: 50px; /* Rounded corners */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    backdrop-filter: blur(10px); /* Apply blur effect */
+    /* border: 1px solid rgba(255, 255, 255, 0.2); Light border around navbar */
+}
+
+.custom-nav ul li {
+    margin: 0 15px;
+}
+
+.custom-nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    transition: background 0.3s ease;
+}
+
+.custom-nav ul li a:hover {
+    background-color: rgba(120, 63, 255, 0.5); /* Slight purple hover effect */
+    border-radius: 25px;
+}
+
+/* Additional Info Section */
+.additional-info {
+    margin-top: 50px; /* Spacing from the previous section */
+    padding: 50px 20px;
+    /* background-color: rgba(255, 255, 255, 0.05); Slightly transparent background */
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns layout */
+    gap: 20px; /* Space between items */
+    max-width: 1200px;
+    margin: 0 auto; /* Center the grid */
+}
+
+.info-item {
+    background-color: rgba(0, 0, 0, 0.8); /* Dark background */
+    padding: 20px;
+    border-radius: 15px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.large-item {
+    grid-column: span 2; /* Span across both columns */
+    text-align: left; /* Align text to the left for larger block */
+    padding: 30px;
+}
+
+.info-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tech-stack span {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    color: #fff;
+}
+
+#about {
+  padding: 100px 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  text-align: center; /* Menyelaraskan teks di tengah */
+  width: 100%;
+  color: #fff;
+}
+
+#about h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+#about p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Section Styles */
+#experiences {
+  padding: 60px 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  flex:auto;
+  display: flex;
+  flex-direction: row;
+}
+
+.section-title {
+  font-size: 32px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.experience-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-right: 70px;
+}
+
+/* Experience List Styles */
+.experience-list {
+  display: flex;
+  flex-direction: column;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.space{
+  margin-top: 20px;
+}
+
+.experience-item {
+  background-color: #f8f8f8;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.experience-item:hover {
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.experience-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #092143;
+  margin-bottom: 10px;
+}
+
+.company-name {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.experience-date {
+  font-size: 16px;
+  color: #888;
+  font-style: italic;
+  margin-bottom: 15px;
+}
+
+.experience-description {
+  font-size: 16px;
+  color: #333;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .experience-item {
+    padding: 15px;
+  }
+
+  .experience-title {
+    font-size: 22px;
+  }
+
+  .section-title {
+    font-size: 28px;
+  }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    flex:auto;
+    display: flex;
+    flex-direction: column;   
+  }
+
+  .rounded-image {
+    width: 150px; /* Atur lebar sesuai kebutuhan */
+    height: 150px; /* Atur tinggi sesuai kebutuhan */
+    border-radius: 50%; /* Membuat gambar menjadi bulat */
+    display: block; /* Memastikan gambar berada di baris baru */
+    margin: 0 auto 20px; /* Menambahkan margin di bawah gambar */
+    object-fit: cover; /* Memastikan gambar tidak terdistorsi */
+  }
+}
+
+/* Projects Section */
+#projects {
+  padding: 100px 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  text-align: center;
+}
+
+#projects h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.project-card {
+  background-color: rgba(0, 0, 0, 0.8); /* Dark background for the cards */
+  padding: 20px;
+  border-radius: 20px; /* Rounded corners */
+  text-align: left;
+  width: calc(50% - 40px); /* Two cards per row with spacing */
+  max-width: 500px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); /* Adding some shadow for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-10px); /* Slight lift on hover */
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+.project-image {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  margin-bottom: 15px;
+}
+
+.project-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #b3b3ff; /* Consistent highlight color */
+}
+
+.project-card p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #e0e0e0;
+  margin-bottom: 20px;
+}
+
+.project-card .cta-button {
+  background-color: #4d4dff;
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+}
+
+.project-card .cta-button:hover {
+  background-color: #7373ff;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .projects-container {
+    flex-direction: column;
+  }
+
+  .project-card {
+    width: 100%;
+  }
+}
+
+   /* Styling for the download CV section with gradient */
+   #download-cv {
+    background: linear-gradient(135deg, #000428, #004e92);
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    justify-content: center;
+    padding: 60px 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+#download-cv h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+#download-cv p {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+#download-cv a {
+    background-color: #000;
+    color: #fff;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1rem;
+    border: 2px solid transparent;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+#download-cv a:hover {
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    section {
+        width: 95%;
+    }
+
+    #download-cv {
+        padding: 40px 10px;
+    }
+
+    #download-cv h2 {
+        font-size: 1.5rem;
+    }
+
+    #download-cv a {
+        padding: 12px 24px;
+        font-size: 0.9rem;
+    }
+}
+
+.footer {
+  background: #2a2a2a; /* Sesuaikan dengan warna yang diinginkan */
+  color: #fff;
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.footer-content h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.social-icons a {
+  color: #fff;
+  font-size: 2rem;
+  margin: 0 10px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.social-icons img{
+  width: 50px;
+}
+
+.social-icons a:hover {
+  color: #f39c12; /* Warna hover untuk ikon sosial */
+}
+
+.footer-bottom {
+  margin-top: 20px;
+  border-top: 1px solid #444;
+  padding-top: 10px;
+}
+
+.footer-bottom p {
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+@media (max-width: 600px) {
+  .footer-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .social-icons a {
+    font-size: 1.5rem;
+  }
+}
